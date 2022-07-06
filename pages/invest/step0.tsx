@@ -1,30 +1,30 @@
 import React, { useState, useRef } from "react";
 
 import { Flex, Input, Button, Box } from "@chakra-ui/react";
-import { toast } from "react-toastify";
-
 import PageLayout from "../../components/PageLayout";
 import {
   InputTransition,
   ButtonTransition,
 } from "../../components/ImageTransition";
-import { useStore } from "../../contexts/store";
+
 import { useRouter } from "next/router";
 
-export default function InvestStep1() {
+export default function InvestStep0() {
+  
+
   const [showInput, setShowInput] = useState(false);
   const passRef = useRef();
   const router = useRouter();
-  // const { state, dispatch } = useStore();
+  
   const projectId = router.query["project_id"];
 
   function onPresale() {
     router.push({
-      pathname: "/invest/step1",
+      pathname: '/invest/step1',
       query: {
-        project_id: projectId,
-      },
-    });
+        project_id: 1
+      }
+    })
   }
   function onSeed() {
     setShowInput(!showInput);
